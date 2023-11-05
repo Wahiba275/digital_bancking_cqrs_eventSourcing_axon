@@ -16,6 +16,7 @@ import ma.enset.digital_bancking_cqrs_eventsourcing_axon.query.repositories.Oper
 import org.axonframework.eventhandling.EventHandler;
 import org.axonframework.queryhandling.QueryHandler;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
@@ -23,6 +24,7 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 @Slf4j
+@Transactional
 public class AccountServiceHandler {
     private AccountRepository accountRepository;
     private OperationRepository operationRepository;

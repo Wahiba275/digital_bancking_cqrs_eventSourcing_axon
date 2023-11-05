@@ -22,48 +22,54 @@ import java.util.stream.Stream;
 @RequestMapping(path = "/commands/account")
 @AllArgsConstructor
 public class AccountCommandController {
-    private CommandGateway commandGateway ;
-    private EventStore eventStore;
+    private final CommandGateway commandGateway;
+    private final EventStore eventStore;
+
     @PostMapping(path = "/create")
-    public CompletableFuture<String> createAccount(@RequestBody CreateAccountRequestDTO request){
+    public CompletableFuture<String> createAccount(@RequestBody CreateAccountRequestDTO request) {
         CompletableFuture<String> commandResponse = commandGateway.send(new CreateAccountCommand(
                 UUID.randomUUID().toString(),
                 request.getInitialBalance(),
                 request.getCurrency()
         ));
+
+        return commandResponse;
+    }
+
+    @PutMapping(path = "/credit")
+    public CompletableFuture<String> creditAccount(@RequestBody CreditAccountRequestDTO request) {
+        CompletableFuture<String> commandResponse = commandGateway.send(new CreditAccountCommand(
+                request.getAccountId(),
+                request.getAmount(),
+                request.getCurrency()
+        ));
+
+        return commandResponse;
+    }
+
+    @PutMapping(path = "/debit")
+    public CompletableFuture<String> debitAccount(@RequestBody DebitAccountRequestDTO request) {
+        CompletableFuture<String> commandResponse = commandGateway.send(new DebitAccountCommand(
+                request.getAccountId(),
+                request.getAmount(),
+                request.getCurrency()
+        ));
+
         return commandResponse;
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<String > exceptionHandler( Exception exception){
-        ResponseEntity<String > entity = new ResponseEntity<>(
+    public ResponseEntity<String> exceptionHandler(Exception exception) {
+        ResponseEntity<String> entity = new ResponseEntity<>(
                 exception.getMessage(),
                 HttpStatus.INTERNAL_SERVER_ERROR
         );
         return entity;
     }
 
-    @GetMapping("/eventStore/{accountId}")
-    public Stream eventStore(@PathVariable String accounId){
-          return eventStore.readEvents(accounId).asStream();
-    }
-
-    @PutMapping (path = "/credit")
-    public CompletableFuture<String> creditAccount(@RequestBody CreditAccountRequestDTO request){
-        CompletableFuture<String> commandResponse = commandGateway.send(new CreditAccountCommand(
-                request.getAccountId(),
-                request.getAmount(),
-                request.getCurrency()
-                ));
-        return commandResponse;
-    }
-    @PutMapping (path = "/debit")
-    public CompletableFuture<String> debitAccount(@RequestBody DebitAccountRequestDTO request){
-        CompletableFuture<String> commandResponse = commandGateway.send(new DebitAccountCommand(
-                request.getAccountId(),
-                request.getAmount(),
-                request.getCurrency()
-        ));
-        return commandResponse;
+    // Fetching event from event store by account id
+    @GetMapping(path = "/eventStore/{accountId}")
+    public Stream eventStore(@PathVariable String accountId) {
+        return eventStore.readEvents(accountId).asStream();
     }
 }

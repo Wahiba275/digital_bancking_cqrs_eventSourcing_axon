@@ -1,6 +1,6 @@
 # CQRS Event Sourcing Application with Spring Boot and Axon Framework
 
-# Table of Contents
+# 📑 Table of Contents
 - 📄 [Overview](#overview)
 - 📦 [Dependencies](#dependencies)
 - 📂 [Project Structure](#project-structure)

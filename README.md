@@ -99,49 +99,49 @@ The Axon Framework is built on several foundational principles:
 ## Axon Server Management Interface Overview
 1. **web interface of Axon Server**
    
-![Alt text](/Tp3SP/AxonServer.PNG)
+![Alt text](/tp3SP/AxonServer.PNG)
 
 2. **Axon Server dashboard's sections for "Commands" and "Queries"**
 In these sections, you typically see the list of command and query message types that have been processed by the server.
 
-![Alt text](/Tp3SP/cmd.PNG)
+![Alt text](/tp3SP/cmd.PNG)
 
-![Alt text](/Tp3SP/query.PNG)
+![Alt text](/tp3SP/query.PNG)
 
 # Testing 
 1. Testing the creation of an account
    
-   ![Alt text](/Tp3SP/create.PNG)
+   ![Alt text](/tp3SP/create.PNG)
 
 2. Testing the creation of an account with negative initial balance
    
-   ![Alt text](/Tp3SP/create3.PNG)
+   ![Alt text](/tp3SP/create3.PNG)
    
 3. Fetching event from event store
    
-   ![Alt text](/Tp3SP/eventStore.PNG)
+   ![Alt text](/tp3SP/eventStore.PNG)
    
 4. Testing the credit of an account
    - **Postman**:
      
-     ![Alt text](/Tp3SP/credit1.PNG)
+     ![Alt text](/tp3SP/credit1.PNG)
    
-     ![Alt text](/Tp3SP/creditEvent.PNG)
+     ![Alt text](/tp3SP/creditEvent.PNG)
      
 5. Testing the credit of an account with negative amount
 
-   ![Alt text](/Tp3SP/credit2.PNG)
+   ![Alt text](/tp3SP/credit2.PNG)
    
 7. Testing the debit of an account
    - **Postman**:
      
-     ![Alt text](/Tp3SP/debit1.PNG)
+     ![Alt text](/tp3SP/debit2.PNG)
 
-     ![Alt text](/Tp3SP/debitEvent.PNG)
+     ![Alt text](/tp3SP/debitEvent.PNG)
      
 8. Testing the debit of an account with insufficient balance
    
-    ![Alt text](/Tp3SP/debit2.PNG)
+    ![Alt text](/tp3SP/debit1.PNG)
 
 
 

@@ -1,4 +1,22 @@
 # CQRS Event Sourcing Application with Spring Boot and Axon Framework
+
+# Table of Contents
+- 📄 [Overview](#overview)
+- 📦 [Dependencies](#dependencies)
+- 📂 [Project Structure](#project-structure)
+- 🔧 [Axon Framework](#axon-framework)
+   - 📚 [Key Concepts and Components of Axon Framework](#key-concepts-and-components-of-axon-framework)
+   - 💻 [Axon Server Management Interface Overview](#axon-server-management-interface-overview)
+- 🧪 [Testing](#testing)
+   - ✅ [Testing the creation of an account](#testing-the-creation-of-an-account)
+   - ❌ [Testing the creation of an account with negative initial balance](#testing-the-creation-of-an-account-with-negative-initial-balance)
+   - 📤 [Fetching event from event store](#fetching-event-from-event-store)
+   - 💳 [Testing the credit of an account](#testing-the-credit-of-an-account)
+   - ⚠️ [Testing the credit of an account with negative amount](#testing-the-credit-of-an-account-with-negative-amount)
+   - 💰 [Testing the debit of an account](#testing-the-debit-of-an-account)
+   - 🚫 [Testing the debit of an account with insufficient balance](#testing-the-debit-of-an-account-with-insufficient-balance)
+
+
 # Overview 
 This application serves as a practical example of implementing Command Query Responsibility Segregation (CQRS) and Event Sourcing principles.
 It features a straightforward REST API through which users can establish a bank account and perform transactions such as deposits and withdrawals.
@@ -109,37 +127,37 @@ In these sections, you typically see the list of command and query message types
 ![Alt text](/tp3SP/query.PNG)
 
 # Testing 
-1. Testing the creation of an account
+### Testing the creation of an account
    
    ![Alt text](/tp3SP/create.PNG)
 
-2. Testing the creation of an account with negative initial balance
+### Testing the creation of an account with negative initial balance
    
    ![Alt text](/tp3SP/create3.PNG)
    
-3. Fetching event from event store
+### Fetching event from event store
    
    ![Alt text](/tp3SP/eventStore.PNG)
    
-4. Testing the credit of an account
+### Testing the credit of an account
    - **Postman**:
      
      ![Alt text](/tp3SP/credit1.PNG)
    
      ![Alt text](/tp3SP/creditEvent.PNG)
      
-5. Testing the credit of an account with negative amount
+### Testing the credit of an account with negative amount
 
    ![Alt text](/tp3SP/credit2.PNG)
    
-7. Testing the debit of an account
+### Testing the debit of an account
    - **Postman**:
      
      ![Alt text](/tp3SP/debit2.PNG)
 
      ![Alt text](/tp3SP/debitEvent.PNG)
      
-8. Testing the debit of an account with insufficient balance
+### Testing the debit of an account with insufficient balance
    
     ![Alt text](/tp3SP/debit1.PNG)
 

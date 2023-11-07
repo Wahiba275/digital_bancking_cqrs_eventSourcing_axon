@@ -17,18 +17,18 @@
    - 🚫 [Testing the debit of an account with insufficient balance](#testing-the-debit-of-an-account-with-insufficient-balance)
 
 
-# Overview 
+# 📄  Overview 
 This application serves as a practical example of implementing Command Query Responsibility Segregation (CQRS) and Event Sourcing principles.
 It features a straightforward REST API through which users can establish a bank account and perform transactions such as deposits and withdrawals.
 Crafted in Java, the application utilizes the Spring Boot framework for its infrastructure, along with the Axon Framework to facilitate its event-driven architecture.
-# Dependencies
+# 📦 Dependencies
 ![Java](https://img.shields.io/badge/Java-red?style=for-the-badge&logo=java)
 ![Spring](https://img.shields.io/badge/Spring-green?style=for-the-badge&logo=spring)
 ![Axon](https://img.shields.io/badge/Axon-blue?style=for-the-badge)
 ![Framework](https://img.shields.io/badge/Framework-darkblue?style=for-the-badge)
 ![MySQL](https://img.shields.io/badge/MySQL-blue?style=for-the-badge&logo=mysql)
 
-# Project Structure
+# 📂 Project Structure
 ```
 digital_banking_cqrs_eventSourcing_axon
 ├── .idea
@@ -84,9 +84,9 @@ digital_banking_cqrs_eventSourcing_axon
     └── resources
         └── application.properties
 ```
-# Axon Framework
+# 🔧 Axon Framework
 Axon Framework is a Java-based framework for building scalable, extensible, and maintainable applications by supporting the implementation of CQRS (Command Query Responsibility Segregation) and Event Sourcing patterns. Axon Framework provides the building blocks for message handling components, allowing developers to focus on the core business logic rather than the boilerplate code required to implement an event-driven microservices architecture. This simplifies development and supports clean, domain-focused code that can evolve over time with the business needs.
-## Key Concepts and Components of Axon Framework
+## 📚 Key Concepts and Components of Axon Framework
 The Axon Framework is built on several foundational principles:
 1. **Domain-Driven Design (DDD):** Axon aligns closely with DDD principles, which emphasize the importance of basing the design on the underlying domain of the business.
 2. **CQRS:** This pattern separates the handling of command messages (which modify state) from query messages (which read state). This separation allows you to scale read and write workloads independently and optimize the architecture for each function.
@@ -114,7 +114,7 @@ The Axon Framework is built on several foundational principles:
         ``` java -jar axonserver.jar ```
         This command will start Axon Server, and you should see output in the terminal that indicates the server is running. By default, Axon Server will listen on port `8024` for the HTTP API and port `8124` for the gRPC interface.
 
-## Axon Server Management Interface Overview
+## 💻 Axon Server Management Interface Overview
 1. **web interface of Axon Server**
    
 ![Alt text](/tp3SP/AxonServer.PNG)
@@ -126,40 +126,40 @@ In these sections, you typically see the list of command and query message types
 
 ![Alt text](/tp3SP/query.PNG)
 
-# Testing 
-### Testing the creation of an account
+# 🧪 Testing 
+### ✅ Testing the creation of an account
    
    ![Alt text](/tp3SP/create.PNG)
 
-### Testing the creation of an account with negative initial balance
+### ❌ Testing the creation of an account with negative initial balance
    
    ![Alt text](/tp3SP/create3.PNG)
    
-### Fetching event from event store
+### 📤 Fetching event from event store
    
    ![Alt text](/tp3SP/eventStore.PNG)
    
-### Testing the credit of an account
+### 💳 Testing the credit of an account
    - **Postman**:
-     
+   
      ![Alt text](/tp3SP/credit1.PNG)
    
      ![Alt text](/tp3SP/creditEvent.PNG)
      
-### Testing the credit of an account with negative amount
+### ⚠️ Testing the credit of an account with negative amount
 
    ![Alt text](/tp3SP/credit2.PNG)
    
-### Testing the debit of an account
+### 💰 Testing the debit of an account
    - **Postman**:
      
      ![Alt text](/tp3SP/debit2.PNG)
 
      ![Alt text](/tp3SP/debitEvent.PNG)
      
-### Testing the debit of an account with insufficient balance
+### 🚫 Testing the debit of an account with insufficient balance
    
-    ![Alt text](/tp3SP/debit1.PNG)
+   ![Alt text](/tp3SP/debit1.PNG)
 
 
 
